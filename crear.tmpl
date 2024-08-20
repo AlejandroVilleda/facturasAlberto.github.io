@@ -1,0 +1,39 @@
+{{define "crear"}}
+{{template "cabecera"}}
+
+<div class="card">
+
+    <div class="card-header">
+        Registrando orden de factura
+    </div>
+
+    <div class="card-body">
+        <form method="post" action="/insertar">
+            <div class="form-floating">
+                <input type="number" class="form-control" name="lote" id="loteA" aria-describedby="helpId">
+                <label for="loteA">Lote</label>
+            </div><br>
+            <div class="form-floating">
+                <input type="number" class="form-control" name="tamanio_lote" id="tamanio_lote" aria-describedby="helpId">
+                <label for="tamanio_lote"> Tamaño del lote </label>
+            </div><br>
+            <div class="form-floating">
+                <input type="text" class="form-control" name="producto" id="producto" aria-describedby="helpId">
+                <label for="producto"> Producto </label>
+            </div><br>
+            <div class="form-floating">
+                <input type="text" class="form-control" name="codigo" id="codigo" aria-describedby="helpId">
+                <label for="codigo"> Codigo: </label>
+            </div><br><br>
+
+            <button class="btn btn-success" type="submit">Agregar nueva orden</button>
+            <a class="btn btn-primary" href="/" role="button">Regresar</a>
+
+        </form>
+    </div>
+</div>
+
+
+
+{{template "pie"}}
+{{end}}

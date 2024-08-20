@@ -1,0 +1,38 @@
+{{define "editar"}}
+{{template "cabecera"}}
+
+<div class="card">
+
+    <div class="card-header">
+        Editando orden de factura
+    </div>
+
+    <div class="card-body">
+        <form method="post" action="/actualizar">
+
+            <div class="form-group">
+                <input type="hidden" value={{.Lote}} class="form-control" name="lote" id="lote">
+            </div>
+            <div class="form-group">
+                <label for=""> Tamaño del lote: </label>
+                <input type="number" class="form-control" value={{.Tamanio_lote}} name="tamanio_lote" id="tamanio_lote" aria-describedby="helpId">
+            </div>
+            <div class="form-group">
+                <label for=""> Producto: </label>
+                <input type="text" class="form-control" value={{.Producto}} name="producto" id="producto" aria-describedby="helpId">
+            </div>
+            <div class="form-group">
+                <label for=""> Codigo: </label>
+                <input type="text" class="form-control" value={{.Codigo}} name="codigo" id="codigo" aria-describedby="helpId">
+            </div>
+
+            <button class="btn btn-success" type="submit">Realizar retiro</button>
+            <a class="btn btn-primary" href="/" role="button">Regresar</a>
+
+        </form>
+    </div>
+</div>
+
+
+{{template "pie"}}
+{{end}}

@@ -1,0 +1,45 @@
+{{define "retirar"}}
+{{template "cabecera"}}
+
+<div class="card">
+
+    <div class="card-header">
+        Retirando orden de factura
+    </div>
+
+    <div class="card-body">
+        <form method="post" action="/actualizarRetiro">
+
+            <div class="form-group">
+                <input type="hidden" value={{.Lote}} class="form-control" name="lote" id="lote">
+            </div>
+            <div class="form-group">
+                <input type="hidden" value={{.Tamanio_lote}} class="form-control" name="tamanio_lote" id="tamanio_lote">
+            </div>
+
+            <input class="form-control" type="text" value="Lote: {{.Lote}}" aria-label="" disabled readonly><br>
+            <input class="form-control" type="text" value="Producto: {{.Producto}}" aria-label="" disabled readonly><br>
+            <input class="form-control" type="text" value="Codigo: {{.Codigo}}" aria-label="" disabled readonly><br><br>
+
+            <div class="row g-2">
+                <div class="col-md">
+                    <input class="form-control g-4" type="text" value="Tamaño del lote: {{.Tamanio_lote}}" aria-label="" disabled readonly><br>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" value=0 name="nuevo_tamanio" id="nuevo_tamanio" aria-describedby="helpId">
+                        <label for="nuevo_tamanio">Nuevo tamaño del lote: </label>
+                    </div>
+                </div>
+            </div><br>
+
+            <button class="btn btn-success" type="submit">Modificar orden</button>
+            <a class="btn btn-primary" href="/" role="button">Regresar</a>
+
+        </form>
+    </div>
+</div>
+
+
+{{template "pie"}}
+{{end}}
